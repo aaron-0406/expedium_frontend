@@ -10,8 +10,16 @@ import {
 } from "@/components/ui/carousel";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, CircleDollarSign } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Check,
+  CheckCircle,
+  Clock,
+  FileText,
+  Shield,
+  Users,
+} from "lucide-react";
+import { Fragment } from "react";
 
 const images = [
   "/images/Captura1.png",
@@ -20,10 +28,86 @@ const images = [
 ];
 
 const steps = [
-  { id: 1, title: "Paso 1", description: "Crea una cuenta." },
-  { id: 2, title: "Paso 2", description: "Completa tu perfil." },
-  { id: 3, title: "Paso 3", description: "Explora las opciones." },
-  { id: 4, title: "Paso 4", description: "Comienza a usar la app." },
+  {
+    id: 1,
+    title: "Paso 1",
+    description:
+      "Crea una cuenta gratuita en la plataforma ingresando tu correo electrónico y estableciendo una contraseña segura.",
+  },
+  {
+    id: 2,
+    title: "Paso 2",
+    description:
+      "Completa tu perfil con tu información personal, foto y preferencias para mejorar tu experiencia en la aplicación.",
+  },
+  {
+    id: 3,
+    title: "Paso 3",
+    description:
+      "Explora las opciones disponibles, encuentra eventos, partidos o comunidades que se adapten a tus intereses.",
+  },
+  {
+    id: 4,
+    title: "Paso 4",
+    description:
+      "Comienza a usar la app, únete a eventos, crea equipos, reserva canchas y disfruta de la experiencia.",
+  },
+];
+
+const plans = [
+  {
+    name: "Básico",
+    price: "S/59.90",
+    discountPrice: "S/49.90",
+    description:
+      "Ideal para abogados individuales que manejan pocos expedientes.",
+    benefits: [
+      "Hasta 25 expedientes principales",
+      "Sin límite de miembros",
+      "2 horarios de notificación",
+    ],
+  },
+  {
+    name: "Estándar",
+    price: "S/79.90",
+    discountPrice: "S/69.90",
+    description: "Para estudios jurídicos pequeños que requieren más control.",
+    benefits: [
+      "Hasta 50 expedientes principales",
+      "Sin límite de miembros",
+      "2 horarios de notificación",
+      "Historial de notificaciones",
+    ],
+  },
+  {
+    name: "Corporativo",
+    price: "S/139.90",
+    discountPrice: "S/119.90",
+    description:
+      "Perfecto para estudios jurídicos grandes con alta carga de expedientes.",
+    benefits: [
+      "Hasta 100 expedientes principales",
+      "Sin límite de miembros",
+      "2 horarios de notificación",
+      "Historial de notificaciones",
+      "Soporte prioritario",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "Personalizado",
+    discountPrice: "",
+    description:
+      "Diseñado a medida para grandes firmas con necesidades especiales.",
+    benefits: [
+      "Más de 100 expedientes principales",
+      "Sin límite de miembros",
+      "2 horarios de notificación",
+      "Historial de notificaciones",
+      "Soporte prioritario",
+      "Funciones exclusivas a medida",
+    ],
+  },
 ];
 
 export default function Home() {
@@ -67,31 +151,175 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <div className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-10">
+      <div className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-6 lg:px-20">
         <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
           ¿Cómo empiezo?
         </h2>
-        <div className="p-12 flex justify-between items-center text-center">
+        <div className="px-16 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-0 text-center items-center">
           {steps.map((step, index) => (
-            <div key={step.id} className="flex items-center">
-              <div className="flex flex-col items-center">
+            <Fragment key={step.id}>
+              <div
+                key={step.id}
+                className="flex flex-col items-center md:px-3 lg:px-0"
+              >
                 <div className="w-12 h-12 bg-[#d1ae6e] text-white rounded-full flex items-center justify-center">
                   <Check className="w-6 h-6" />
                 </div>
                 <p className="mt-2 font-semibold text-gray-800 dark:text-gray-300">
                   {step.title}
                 </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
+                <p className="text-gray-500 dark:text-gray-400 text-justify">
                   {step.description}
                 </p>
               </div>
+
               {index < steps.length - 1 && (
-                <ArrowRight className="text-gray-400 dark:text-gray-500 w-6 h-6 mx-4" />
+                <div className="hidden lg:flex justify-center">
+                  <ArrowRight className="text-gray-400 dark:text-gray-500 w-6 h-6" />
+                </div>
               )}
-            </div>
+            </Fragment>
           ))}
         </div>
       </div>
+
+      <div className="w-full py-28 px-6 md:px-10">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12">
+          <div>
+            <h2 className="text-3xl text-left font-semibold">
+              Gestión de expedientes fácil
+            </h2>
+            <p className="mt-4 text-left text-gray-700 dark:text-gray-300">
+              Diseñado para que agregues, administres y compartas expedientes
+              sin complicaciones. No necesitas capacitación ni configuraciones
+              complejas.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-12">
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <FileText className="text-[#d1ae6e]" size={28} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-left">
+                  Sube y organiza expedientes
+                </h3>
+                <p className="mt-4 text-left text-gray-700 dark:text-gray-300">
+                  Agrega los códigos de expedientes y nuestra plataforma los
+                  organizará y notificará sobre actualizaciones.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <Clock className="text-[#d1ae6e]" size={28} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-left">
+                  Notificaciones a tu medida
+                </h3>
+                <p className="mt-4 text-left text-gray-700 dark:text-gray-300">
+                  Configura horarios específicos para recibir notificaciones y
+                  estar siempre informado de cambios importantes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-12">
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <Users className="text-[#d1ae6e]" size={28} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-left">
+                  Colabora con tu equipo
+                </h3>
+                <p className="mt-4 text-left text-gray-700 dark:text-gray-300">
+                  Comparte expedientes con tu equipo, asigna roles y gestiona
+                  permisos fácilmente dentro de la plataforma.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 flex items-center justify-center">
+                <Shield className="text-[#d1ae6e]" size={28} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-left">
+                  Seguridad y respaldo
+                </h3>
+                <p className="mt-4 text-left text-gray-700 dark:text-gray-300">
+                  Tus expedientes estarán siempre disponibles y protegidos con
+                  cifrado de última generación.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full md:px-8 lg:px-16 mt-24">
+          <Image
+            src="/images/Captura4.png"
+            alt="Plataforma"
+            className="rounded-lg object-cover w-full"
+            width={100}
+            height={100}
+            layout="responsive"
+          />
+        </div>
+      </div>
+
+      <section className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-6 lg:px-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Elige un plan a tu medida
+          </h2>
+          <p className="text-gray-400 mt-2">
+            Utiliza un plan dependiendo de la cantidad de expedientes que
+            necesites revisar.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className="bg-gray-100 dark:bg-gray-900 p-6 rounded-lg shadow-lg"
+            >
+              <h3 className="text-xl font-semibold">{plan.name}</h3>
+              <p className="text-sm text-gray-400">{plan.description}</p>
+              <p className="text-3xl font-bold mt-2">
+                {plan.price}{" "}
+                <span className="text-lg font-normal">
+                  {plan.discountPrice && "/ mes"}
+                </span>
+              </p>
+              {plan.discountPrice && (
+                <p className="text-gray-400 text-sm">
+                  S/{plan.discountPrice} / mes si se paga por seis meses
+                </p>
+              )}
+
+              <ul className="mt-4 space-y-2 text-sm">
+                {plan.benefits.map((benefit, i) => (
+                  <li key={i} className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-[#d1ae6e] mr-2" />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+
+              <Button className="mt-6 w-full bg-[#d1ae6e] hover:bg-[#b8935b] text-white py-2 rounded-lg">
+                Suscribirme
+              </Button>
+            </div>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }
