@@ -152,7 +152,10 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <div className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-6 lg:px-20">
+      <div
+        className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-6 lg:px-20"
+        id="home-como-empiezo"
+      >
         <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
           ¿Cómo empiezo?
         </h2>
@@ -184,7 +187,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full py-28 px-6 md:px-10">
+      <div className="w-full py-28 px-6 md:px-10" id="home-plataforma">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12">
           <div>
             <h2 className="text-3xl text-left font-semibold">
@@ -322,7 +325,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-28 px-6 md:px-10">
+      <section className="w-full py-28 px-6 md:px-10" id="home-preguntas">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl text-left font-semibold mb-4">

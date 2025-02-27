@@ -17,36 +17,46 @@ import { DialogDescription, DialogTitle } from "../ui/dialog";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (id: string, offset: number) => {
+    const section = document.getElementById(id);
+    const position = Number(section?.offsetTop) - offset;
+
+    window.scrollTo({ top: position, behavior: "smooth" });
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white dark:bg-gray-900 shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <Link
-          href="/"
-          className="text-lg font-bold dark:text-white flex items-center"
-        >
+        <h2 className="text-lg font-bold dark:text-white flex items-center">
           <img src="/logo.png" alt="Logo" width={50} />
           Expedium
-        </Link>
+        </h2>
 
         <div className="hidden md:flex space-x-6 items-center">
-          <Link
-            href="/equipos"
-            className="hover:text-blue-600 transition dark:text-white"
+          <h2
+            onClick={() => {
+              scrollToSection("home-como-empiezo", 112);
+            }}
+            className="hover:text-blue-600 transition dark:text-white cursor-pointer"
           >
             ¿Cómo empiezo?
-          </Link>
-          <Link
-            href="/reservas"
-            className="hover:text-blue-600 transition dark:text-white"
+          </h2>
+          <h2
+            onClick={() => {
+              scrollToSection("home-plataforma", 80);
+            }}
+            className="hover:text-blue-600 transition dark:text-white cursor-pointer"
           >
             Plataforma
-          </Link>
-          <Link
-            href="/reservas"
-            className="hover:text-blue-600 transition dark:text-white"
+          </h2>
+          <h2
+            onClick={() => {
+              scrollToSection("home-preguntas", 80);
+            }}
+            className="hover:text-blue-600 transition dark:text-white cursor-pointer"
           >
             Preguntas
-          </Link>
+          </h2>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost">Más</Button>
