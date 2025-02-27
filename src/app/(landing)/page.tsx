@@ -124,7 +124,7 @@ export default function Home() {
         legal con herramientas eficientes y conectividad.
       </p>
 
-      <Link href="/register">
+      <Link href="/registro">
         <Button className="my-8 px-6 py-3 text-lg font-semibold text-white bg-[#d1ae6e] hover:bg-[#b8935b] rounded-lg transition">
           ¡Regístrate Ya!
         </Button>
