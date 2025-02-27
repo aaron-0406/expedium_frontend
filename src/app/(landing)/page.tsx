@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionItem } from "@/components/ui/accordion";
 import {
   Carousel,
   CarouselContent,
@@ -318,6 +319,96 @@ export default function Home() {
               </Button>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="w-full py-28 px-6 md:px-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-3xl text-left font-semibold mb-4">
+              Preguntas Frecuentes
+            </h2>
+            <p className="text-gray-700 text-left dark:text-gray-300">
+              Diseñado para que agregues, administres y compartas expedientes
+              sin complicaciones. No necesitas capacitación ni configuraciones
+              complejas.
+            </p>
+          </div>
+
+          <div>
+            <Accordion
+              type="single"
+              collapsible
+              className="grid grid-cols-1 gap-4"
+            >
+              <AccordionItem
+                value="item-1"
+                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+              >
+                <span className="font-medium">¿Qué nos diferencia?</span>
+
+                <div className="p-4 dark:text-gray-300 text-left">
+                  A diferencia de otros servicios, nuestra plataforma es fácil
+                  de usar y sin capacitaciones. Además, ofrecemos tarifas
+                  accesibles para todos.
+                </div>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-2"
+                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+              >
+                <span className="font-medium text-start">
+                  ¿Mi información es confidencial?
+                </span>
+
+                <div className="p-4 dark:text-gray-300 text-left">
+                  Toda la información está protegida con cifrado y medidas de
+                  seguridad de última generación.
+                </div>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-3"
+                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+              >
+                <span className="font-medium text-start">
+                  ¿Qué pasa si el CEJ no funciona?
+                </span>
+
+                <div className="p-4 dark:text-gray-300 text-left">
+                  Puedes seguir consultando la información actualizada dentro de
+                  nuestra plataforma.
+                </div>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-4"
+                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+              >
+                <span className="font-medium text-start">
+                  ¿Qué pasa con los cuadernos incidentales?
+                </span>
+
+                <div className="p-4 dark:text-gray-300 text-left">
+                  También puedes gestionarlos y compartirlos con tu equipo,
+                  igual que cualquier expediente.
+                </div>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-5"
+                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+              >
+                <span className="font-medium">¿Cómo me suscribo?</span>
+
+                <div className="p-4 dark:text-gray-300 text-left">
+                  El proceso es muy sencillo. Contáctanos y te guiaremos paso a
+                  paso.
+                </div>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </section>
     </section>
