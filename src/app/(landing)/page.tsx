@@ -1,7 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionItem } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   Carousel,
   CarouselContent,
@@ -346,69 +351,69 @@ export default function Home() {
             >
               <AccordionItem
                 value="item-1"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium">¿Qué nos diferencia?</span>
+                <AccordionTrigger>¿Qué nos diferencia?</AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   A diferencia de otros servicios, nuestra plataforma es fácil
                   de usar y sin capacitaciones. Además, ofrecemos tarifas
                   accesibles para todos.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-2"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium text-start">
+                <AccordionTrigger>
                   ¿Mi información es confidencial?
-                </span>
+                </AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   Toda la información está protegida con cifrado y medidas de
                   seguridad de última generación.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-3"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium text-start">
+                <AccordionTrigger>
                   ¿Qué pasa si el CEJ no funciona?
-                </span>
+                </AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   Puedes seguir consultando la información actualizada dentro de
                   nuestra plataforma.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-4"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium text-start">
+                <AccordionTrigger>
                   ¿Qué pasa con los cuadernos incidentales?
-                </span>
+                </AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   También puedes gestionarlos y compartirlos con tu equipo,
                   igual que cualquier expediente.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-5"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 [&[data-state=open]]:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg "
               >
-                <span className="font-medium">¿Cómo me suscribo?</span>
+                <AccordionTrigger>¿Cómo me suscribo?</AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   El proceso es muy sencillo. Contáctanos y te guiaremos paso a
                   paso.
-                </div>
+                </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
