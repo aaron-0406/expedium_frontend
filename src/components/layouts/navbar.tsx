@@ -74,7 +74,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <Button asChild>
+          <Button>
             <Link href="/login">Iniciar Sesión</Link>
           </Button>
         </div>
