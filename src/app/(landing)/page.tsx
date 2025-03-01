@@ -1,7 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionItem } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   Carousel,
   CarouselContent,
@@ -116,7 +121,7 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center text-center py-16 bg-gray-100 dark:bg-gray-900">
       <h1 className="block px-4 sm:px-8 md:px-16 lg:px-60 text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 dark:text-white text-center">
         Gestiona, Colabora y Conéctate:{" "}
-        <span className="text-[#d1ae6e]">Todo en un Solo Lugar</span>
+        <span className="text-main">Todo en un Solo Lugar</span>
       </h1>
       <p className="px-6 mt-8 text-lg text-gray-700 dark:text-gray-300 max-w-2xl">
         Gestiona tus expedientes, colabora con colegas y amplía tu red de
@@ -125,7 +130,7 @@ export default function Home() {
       </p>
 
       <Link href="/registro">
-        <Button className="my-8 px-6 py-3 text-lg font-semibold text-white bg-[#d1ae6e] hover:bg-[#b8935b] rounded-lg transition">
+        <Button className="my-8 px-6 py-3 text-lg font-semibold text-white bg-main hover:bg-main/90 rounded-lg transition">
           ¡Regístrate Ya!
         </Button>
       </Link>
@@ -152,7 +157,10 @@ export default function Home() {
         </Carousel>
       </div>
 
-      <div className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-6 lg:px-20">
+      <div
+        className="w-full bg-gray-50 dark:bg-slate-800 py-24 px-4 md:px-6 lg:px-20"
+        id="home-como-empiezo"
+      >
         <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6">
           ¿Cómo empiezo?
         </h2>
@@ -163,7 +171,7 @@ export default function Home() {
                 key={step.id}
                 className="flex flex-col items-center md:px-3 lg:px-0"
               >
-                <div className="w-12 h-12 bg-[#d1ae6e] text-white rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-main text-white rounded-full flex items-center justify-center">
                   <Check className="w-6 h-6" />
                 </div>
                 <p className="mt-2 font-semibold text-gray-800 dark:text-gray-300">
@@ -184,7 +192,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full py-28 px-6 md:px-10">
+      <div className="w-full py-28 px-6 md:px-10" id="home-plataforma">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12">
           <div>
             <h2 className="text-3xl text-left font-semibold">
@@ -200,7 +208,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-12">
             <div className="flex items-start gap-5">
               <div className="w-12 h-12 flex items-center justify-center">
-                <FileText className="text-[#d1ae6e]" size={28} />
+                <FileText className="text-main" size={28} />
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-left">
@@ -215,7 +223,7 @@ export default function Home() {
 
             <div className="flex items-start gap-5">
               <div className="w-12 h-12 flex items-center justify-center">
-                <Clock className="text-[#d1ae6e]" size={28} />
+                <Clock className="text-main" size={28} />
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-left">
@@ -232,7 +240,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-12">
             <div className="flex items-start gap-5">
               <div className="w-12 h-12 flex items-center justify-center">
-                <Users className="text-[#d1ae6e]" size={28} />
+                <Users className="text-main" size={28} />
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-left">
@@ -247,7 +255,7 @@ export default function Home() {
 
             <div className="flex items-start gap-5">
               <div className="w-12 h-12 flex items-center justify-center">
-                <Shield className="text-[#d1ae6e]" size={28} />
+                <Shield className="text-main" size={28} />
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-left">
@@ -308,13 +316,13 @@ export default function Home() {
               <ul className="mt-4 space-y-2 text-sm">
                 {plan.benefits.map((benefit, i) => (
                   <li key={i} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-[#d1ae6e] mr-2" />
+                    <CheckCircle className="w-5 h-5 text-main mr-2" />
                     {benefit}
                   </li>
                 ))}
               </ul>
 
-              <Button className="mt-6 w-full bg-[#d1ae6e] hover:bg-[#b8935b] text-white py-2 rounded-lg">
+              <Button className="mt-6 w-full bg-main hover:bg-main/90 text-white py-2 rounded-lg">
                 Suscribirme
               </Button>
             </div>
@@ -322,7 +330,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-28 px-6 md:px-10">
+      <section className="w-full py-28 px-6 md:px-10" id="home-preguntas">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl text-left font-semibold mb-4">
@@ -343,69 +351,69 @@ export default function Home() {
             >
               <AccordionItem
                 value="item-1"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium">¿Qué nos diferencia?</span>
+                <AccordionTrigger>¿Qué nos diferencia?</AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   A diferencia de otros servicios, nuestra plataforma es fácil
                   de usar y sin capacitaciones. Además, ofrecemos tarifas
                   accesibles para todos.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-2"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium text-start">
+                <AccordionTrigger>
                   ¿Mi información es confidencial?
-                </span>
+                </AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   Toda la información está protegida con cifrado y medidas de
                   seguridad de última generación.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-3"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium text-start">
+                <AccordionTrigger>
                   ¿Qué pasa si el CEJ no funciona?
-                </span>
+                </AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   Puedes seguir consultando la información actualizada dentro de
                   nuestra plataforma.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-4"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg [&[data-state=open]]:bg-gray-200"
               >
-                <span className="font-medium text-start">
+                <AccordionTrigger>
                   ¿Qué pasa con los cuadernos incidentales?
-                </span>
+                </AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   También puedes gestionarlos y compartirlos con tu equipo,
                   igual que cualquier expediente.
-                </div>
+                </AccordionContent>
               </AccordionItem>
 
               <AccordionItem
                 value="item-5"
-                className="hover:bg-gray-200 dark:bg-gray-800 rounded-lg"
+                className="hover:bg-gray-200 [&[data-state=open]]:bg-gray-200 dark:[&[data-state=open]]:bg-gray-800 dark:bg-gray-800 rounded-lg "
               >
-                <span className="font-medium">¿Cómo me suscribo?</span>
+                <AccordionTrigger>¿Cómo me suscribo?</AccordionTrigger>
 
-                <div className="p-4 dark:text-gray-300 text-left">
+                <AccordionContent className="p-4 dark:text-gray-300 text-left">
                   El proceso es muy sencillo. Contáctanos y te guiaremos paso a
                   paso.
-                </div>
+                </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
