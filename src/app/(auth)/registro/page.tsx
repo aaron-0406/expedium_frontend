@@ -64,7 +64,7 @@ const Register = () => {
                     href="/iniciar-sesion"
                     className="underline underline-offset-4"
                   >
-                    Inicie Sesión
+                    Iniciar Sesión
                   </a>
                 </div>
               </form>
