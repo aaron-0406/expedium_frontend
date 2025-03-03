@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+import ThemeToggle from "@/components/ui/theme-toggle";
 
 export default function DashPage() {
   return (
@@ -27,6 +28,8 @@ export default function DashPage() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+
+          <ThemeToggle />
         </div>
       </header>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
