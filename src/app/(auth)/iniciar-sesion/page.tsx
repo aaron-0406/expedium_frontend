@@ -11,8 +11,15 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
+
+  const goDash = () => {
+    router.push("/dash");
+  };
+
   return (
     <div className="flex h-full w-full items-center justify-center p-6 md:p-10 dark:bg-gray-900">
       <div className="w-full max-w-md">
@@ -56,7 +63,7 @@ const Login = () => {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full">
+                  <Button type="button" className="w-full" onClick={goDash}>
                     Iniciar Sesión
                   </Button>
                   <Button
