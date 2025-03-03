@@ -74,8 +74,8 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <Button>
-            <Link href="/login">Iniciar Sesión</Link>
+          <Button asChild>
+            <Link href="/iniciar-sesion">Iniciar Sesión</Link>
           </Button>
         </div>
 
@@ -111,7 +111,7 @@ export default function Navbar() {
                 </Link>
                 <ThemeToggle />
                 <Button asChild>
-                  <Link href="/login">Iniciar Sesión</Link>
+                  <Link href="/iniciar-sesion">Iniciar Sesión</Link>
                 </Button>
               </div>
             </SheetContent>
